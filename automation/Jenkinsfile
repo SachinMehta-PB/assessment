@@ -5,6 +5,14 @@ pipeline {
      jdk "OpenJDK8"
  }
 
+ environment {
+       registryCredential = 'ecr:us-east-2:awscreds'
+       appRegistry = "226892808431.dkr.ecr.us-east-2.amazonaws.com/project-image"
+       vprofileRegistry = "https://226892808431.dkr.ecr.us-east-2.amazonaws.com"
+       cluster = "project-docker"
+       service = "project-docker-service2"
+   }
+
  stages {
    stage('Fetch code'){
      steps {
